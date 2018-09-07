@@ -6,7 +6,7 @@ require 'pp'
 
 CLIENT = Aws::Lambda::Client.new
 
-def send_message_to_facebook(message: "Hello.", user_id: ENV["WORKPLACE_USER_ID"])
+def send_message_to_facebook(message: "Hello from ruby.", user_id: ENV["WORKPLACE_USER_ID"])
   CLIENT.invoke({
     client_context: Base64.encode64({}.to_json),
     invocation_type: "RequestResponse",
